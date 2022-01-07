@@ -1,0 +1,59 @@
+@import 'core';
+
+.button {
+  @include flex(center, center);
+  width: fit-content;
+  @include text(rem(14px), 500, transparent);
+  line-height: 121%;
+  padding: 10px 0;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover &__icon {
+    fill: $BLACK;
+  }
+
+  &__icon {
+    $size: 14px;
+    width: $size;
+    height: $size;
+    fill: $DARK_GREY;
+    margin-right: 10px;
+    @include transition(fill);
+  }
+}
+
+.folders {
+  color: $DARK_GREY;
+  padding-left: 12px;
+  padding-right: 21px;
+  @include transition(background-color, box-shadow, color);
+  &:hover {
+    color: $BLACK;
+    background-color: $WHITE;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.notes {
+  background-color: $GREEN;
+  color: $WHITE;
+  padding-left: 15px;
+  padding-right: 15px;
+  @include transition(background-color);
+  &:hover {
+    background-color: $N1;
+  }
+}
+
+.cancel {
+  background-color: $ASIDE_BG;
+  color: $BTN_GRAY;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include transition(background-color, color);
+  &:hover {
+    background-color: $BORDER;
+    color: $GRAY;
+  }
+}
