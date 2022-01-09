@@ -1,0 +1,57 @@
+@import 'core';
+
+.popup {
+  width: 100%;
+  max-width: 235px;
+  background-color: $WHITE;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  padding: 18px 18px 15px;
+  &__input {
+    width: 100%;
+    @include text(rem(14px), 500, #c7c7c7);
+    line-height: 121%;
+    letter-spacing: 0.15px;
+    background-color: $WHITE;
+    padding: 7px 11px 8px;
+    border: 1px solid $ASIDE_BG;
+    border-radius: 4px;
+    margin-bottom: 13px;
+    @include transition(outline-color);
+    &:focus {
+      outline-color: $LIGHT_GRAY;
+    }
+    &::placeholder {
+      color: #c7c7c7;
+    }
+  }
+  &__wrapper {
+    width: 100%;
+    @include flex(space-between center);
+    margin-bottom: 13px;
+    &_radio {
+      width: 100%;
+      @include flex(space-between, center);
+
+      .input {
+        position: absolute;
+        opacity: 0;
+        z-index: 0;
+        @include size(20px, true);
+
+        &:checked + .label {
+          border: 2px solid #525252;
+        }
+      }
+      .label {
+        @include size(20px, true);
+        border-color: transparent;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
